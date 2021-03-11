@@ -176,7 +176,7 @@ class Table {
         for(let i = 0; i < cellsAmount; i++) {
             const cell = document.createElement('div')
             if(isCellClasses) cell.classList.add(...cellClasses)
-            if(isCellListener) this._addEventHandlers(cell, cellListeners)
+            if(isCellListener) this._addEventHandlers(cell, cellListeners) //! only for demonstration
             
             cell.setAttribute('data-elemId', i)
             cell.textContent = i //for simple of checking homework
@@ -194,7 +194,7 @@ const root = document.querySelector('.root')
 const testTableOne = new Table(350, 450, 5, 6, options)
 const testTableTwo = new Table(200, 200, 4, 8, options).mount('.root')      // you can pass name of class or id with dot / hash before ones
 
-const tableID = testTableOne.mount(root)                                    // you can pass HTML element
+const {id: tableID} = testTableOne.mount(root)                                    // you can pass HTML element
 const {id, table} = testTableOne.getTable()                                 // this method return id and table like DOM element and table id
 root.append(table)
 
