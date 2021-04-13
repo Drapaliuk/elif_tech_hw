@@ -51,11 +51,11 @@ class Table {
         }
     }
 
-    static getTableById(id) { //getting table DOM element by id
+    static getTableById(id) {                                       //getting table DOM element by id
         return document.querySelector(`[data-tableid = "${id}"]`)
     }
 
-    static getCellByIds(tableId, cellId) { //getting cell of table by id
+    static getCellByIds(tableId, cellId) {                              //getting cell of table by id
         const table = Table.getTableById(tableId)
         
         if(!cellId) return table.children
@@ -72,14 +72,14 @@ class Table {
         window.tableIDs = updatedIds
     }
 
-    getTable() { //just get DOM element for personal using
+    getTable() {                                                        //just get DOM element for personal using
         const table = this._createTable()
         const cells = this._createCells()
         table.append(...cells)
         return {id: this._id, table}
     }
 
-    mount(container) { //method for table mounting
+    mount(container) {                                                      //method for table mounting
         if(!container) {
             throw new Error('You must pass HTML element, id, or name of class for searching')
         }
